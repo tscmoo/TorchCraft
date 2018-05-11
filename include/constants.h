@@ -99,6 +99,9 @@ BETTER_ENUM(
     SetUnitHealth = 6, // unit, health
     SetUnitShield = 7, // unit, shield
     SetUnitEnergy = 8, // unit, energy
+    SaveSnapshot = 9, // name (string)
+    LoadSnapshot = 10, // name (string)
+    DeleteSnapshot = 11, // name (string)
 
     OPENBW_COMMAND_END = 2)
 
