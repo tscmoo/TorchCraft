@@ -21,6 +21,12 @@
 #include "messages_generated.h"
 
 Controller::Controller(bool is_client) {
+  STARTUPINFOA sa;
+  PROCESS_INFORMATION pi;
+  memset(&sa, 0, sizeof(sa));
+  memset(&pi, 0, sizeof(pi));
+  GetStartupInfoA(&sa);
+  CreateProcessA(nullptr, ".\bwapi-data\AI\cherrypi.bat", nullptr, nullptr, FALSE, 0, nullptr, nullptr, &sa, &pi);
   this->is_client = is_client;
 #ifdef _WIN32
   sc_path_ = Utils::envToWstring(L"STARCRAFT_DIR", L"C:/StarCraft/");
